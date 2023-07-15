@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 class NumberListProvider extends ChangeNotifier {
   List<int> numbers = [1, 2, 3, 4];
   add() {
-    numbers.add(numbers.last++);
+    int last = numbers.last;
+    numbers.add(last + 1);
     notifyListeners();
   }
 }

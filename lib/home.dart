@@ -30,7 +30,9 @@ class Home extends StatelessWidget {
                     ),
                   ),
                   FloatingActionButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      NumberListProviderModel.add();
+                    },
                     child: const Icon(Icons.add),
                   )
                 ],
