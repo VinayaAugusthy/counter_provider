@@ -1,3 +1,4 @@
+import 'package:counter_provider/second.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -29,11 +30,26 @@ class Home extends StatelessWidget {
                       },
                     ),
                   ),
-                  FloatingActionButton(
-                    onPressed: () {
-                      NumberListProviderModel.add();
-                    },
-                    child: const Icon(Icons.add),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      FloatingActionButton(
+                        onPressed: () {
+                          NumberListProviderModel.add();
+                        },
+                        child: const Icon(Icons.add),
+                      ),
+                      FloatingActionButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const Second(),
+                              ));
+                        },
+                        child: const Icon(Icons.forward),
+                      ),
+                    ],
                   )
                 ],
               ),
