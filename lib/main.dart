@@ -14,11 +14,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [Provider.value(value: NumberListProvider())],
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => NumberListProvider(),
+        )
+      ],
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          primarySwatch: Colors.pink,
+          colorScheme:
+              ColorScheme.fromSeed(seedColor: Color.fromARGB(222, 235, 3, 235)),
           useMaterial3: true,
         ),
         home: const Home(),
